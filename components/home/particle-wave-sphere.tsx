@@ -299,7 +299,11 @@ export default function ParticleWaveSphere() {
     : isMediumScreen
       ? { position: [0, 0, 18.8] as const, fov: 34, near: 0.1, far: 140 }
       : { position: [0, 0, 17.4] as const, fov: 31, near: 0.1, far: 140 };
-  const dpr = isSmallScreen ? [1, 1.5] as const : isMediumScreen ? [1, 1.75] as const : [1, 1.9] as const;
+  const dpr: [number, number] = isSmallScreen
+    ? [1, 1.5]
+    : isMediumScreen
+      ? [1, 1.75]
+      : [1, 1.9];
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
