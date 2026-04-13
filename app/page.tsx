@@ -1,65 +1,123 @@
-import Image from "next/image";
+import HeroSection from "@/components/home/hero-section";
+import CustomerSupportSection from "@/components/home/customer-support-section";
+import ContactFormSection from "@/components/home/contact-form-section";
+import FooterSection from "@/components/home/footer-section";
+import NeonAudioSpectrumWave from "@/components/home/neon-audio-spectrum-wave";
+import ParticleWaveSphere from "@/components/home/particle-wave-sphere";
+import ToolStackSection from "@/components/home/tool-stack-section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <HeroSection />
+
+      <section className="mx-auto w-full max-w-5xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+        <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur sm:p-8">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-cyan-200">
+            Scroll test content
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
+            Keep scrolling to watch the 3D model react
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-200/80 sm:text-base">
+            This extra section exists so the page has real vertical overflow for
+            testing the scroll-linked rotation. As you move down the page, the
+            model should speed up in the scroll direction and ease back to a
+            stop when you pause.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
+              <p className="text-sm font-semibold text-white">Scroll down</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300/80">
+                The model should rotate with the direction and speed of your
+                scroll.
+              </p>
+            </div>
+            <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
+              <p className="text-sm font-semibold text-white">Pause</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300/80">
+                When scrolling stops, the motion should ease out naturally.
+              </p>
+            </div>
+            <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
+              <p className="text-sm font-semibold text-white">Scroll up</p>
+              <p className="mt-2 text-sm leading-6 text-slate-300/80">
+                The direction should reverse without snapping.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-5xl px-4 pb-32 sm:px-6 lg:px-8">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.12),rgba(15,23,42,0.5))] p-6">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-cyan-100">
+              Interaction notes
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-200/80">
+              This is a simple test harness for the scroll behavior, so we can
+              tune sensitivity and easing before wiring it into the real page
+              sections.
+            </p>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(124,58,237,0.12),rgba(15,23,42,0.5))] p-6">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-violet-100">
+              Extra spacing
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-200/80">
+              The extra height below gives the browser enough room to scroll,
+              even if the viewport is tall.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+        <ParticleWaveSphere />
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto mb-0 max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <span className="bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_45%,#845dff_100%)] bg-clip-text text-transparent">
+              AI voice
+            </span>{" "}
+            that answers first.
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-200/80 sm:text-base">
+            Greet callers instantly, route requests, and keep every call
+            moving without needing a front desk.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <NeonAudioSpectrumWave />
+
+        <div className="mt-1 flex flex-wrap justify-center gap-3 text-sm text-slate-200/80">
+          <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            24/7 answering
+          </span>
+          <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            Smart routing
+          </span>
+          <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
+            Faster handoff
+          </span>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <CustomerSupportSection />
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+        <ToolStackSection />
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 pb-28 pt-4 sm:px-6 lg:px-8">
+        <ContactFormSection />
+      </section>
+
+      <FooterSection />
+    </main>
   );
 }

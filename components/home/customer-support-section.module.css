@@ -1,0 +1,291 @@
+.frame {
+  position: relative;
+  min-height: 360vh;
+}
+
+.stickyShell {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.header {
+  padding: 1.5rem 0 2rem;
+}
+
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.6rem;
+}
+
+.heading {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: none;
+}
+
+.headingAccent {
+  background: linear-gradient(90deg, #5ef3ff 0%, #4b88ff 45%, #845dff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtext {
+  font-size: 0.9rem;
+  color: rgba(148, 163, 184, 0.85);
+  line-height: 1.65;
+  max-width: 34rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT: Accordion */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  padding-right: 3rem;
+}
+
+.accordionItem {
+  position: relative;
+  padding: 1.4rem 0 1.4rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  text-align: left;
+  background: transparent;
+  border-left: none;
+  width: 100%;
+  transition: padding-left 200ms ease;
+}
+
+.accordionItem:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.accordionItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 200ms ease;
+}
+
+.accordionItemActive::before {
+  background: linear-gradient(180deg, #5ef3ff 0%, #4b88ff 45%, #845dff 100%);
+}
+
+.accordionTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(148, 163, 184, 0.75);
+  line-height: 1.4;
+  transition: color 180ms ease, font-size 180ms ease;
+}
+
+.accordionItemActive .accordionTitle {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.accordionDescription {
+  font-size: 0.875rem;
+  color: rgba(226, 232, 240, 0.72);
+  line-height: 1.7;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 340ms ease, opacity 300ms ease, margin-top 300ms ease;
+  margin-top: 0;
+}
+
+.accordionItemActive .accordionDescription {
+  max-height: 140px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
+
+.accordionCta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+}
+
+.accordionCta:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* RIGHT: Sticky Panel */
+.mediaPanel {
+  position: sticky;
+  top: 5.5rem;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mediaCard {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.7);
+  overflow: hidden;
+}
+
+.mediaCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mediaCardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.mediaCardSub {
+  font-size: 0.72rem;
+  color: rgba(148, 163, 184, 0.75);
+  margin-top: 2px;
+}
+
+.stepBadge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  background: rgba(94, 243, 255, 0.1);
+  color: #5ef3ff;
+  border: 1px solid rgba(94, 243, 255, 0.2);
+  letter-spacing: 0.05em;
+}
+
+.mediaBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 300px;
+  transition: opacity 250ms ease;
+}
+
+.mediaBodyFade {
+  opacity: 0;
+}
+
+.visRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.visLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.visVal {
+  font-size: 0.72rem;
+  color: rgba(148, 163, 184, 0.75);
+  margin-top: 2px;
+}
+
+.progressWrap {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #5ef3ff, #845dff);
+  transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metricRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.metricBox {
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+.metricNum {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.metricLbl {
+  font-size: 0.68rem;
+  color: rgba(148, 163, 184, 0.7);
+  margin-top: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(148, 163, 184, 0.8);
+}
+
+.tagActive {
+  background: rgba(94, 243, 255, 0.08);
+  color: #5ef3ff;
+  border-color: rgba(94, 243, 255, 0.25);
+}

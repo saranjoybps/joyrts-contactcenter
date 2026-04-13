@@ -1,0 +1,128 @@
+.section {
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.4rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(94, 243, 255, 0.08), transparent 35%, rgba(132, 93, 255, 0.08));
+}
+
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.description {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.76);
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 11, 24, 0.72);
+  padding: 0.9rem 1rem;
+  font: inherit;
+  font-size: 0.92rem;
+  color: #ffffff;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(94, 243, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(94, 243, 255, 0.12);
+  background: rgba(10, 14, 30, 0.92);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+.submitButton {
+  margin-top: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #5ef3ff 0%, #4b88ff 45%, #845dff 100%);
+  padding: 0.9rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0a1020;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submitButton {
+    transition: none;
+  }
+}

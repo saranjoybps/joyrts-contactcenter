@@ -1,0 +1,37 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="80" x2="1080" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFF"/>
+      <stop offset="1" stop-color="#E9EEF9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="180" x2="920" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EF3FF"/>
+      <stop offset="0.5" stop-color="#4B88FF"/>
+      <stop offset="1" stop-color="#845DFF"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="300" y1="220" x2="900" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="260" cy="210" r="140" fill="#5EF3FF" fill-opacity=".08"/>
+  <circle cx="972" cy="196" r="170" fill="#845DFF" fill-opacity=".08"/>
+  <rect x="170" y="170" width="860" height="560" rx="40" fill="url(#panel)" stroke="#FFFFFF"/>
+  <rect x="250" y="250" width="340" height="160" rx="28" fill="#FFFFFF" stroke="#E4EAF7"/>
+  <rect x="632" y="250" width="250" height="160" rx="28" fill="#FFFFFF" stroke="#E4EAF7"/>
+  <rect x="250" y="446" width="340" height="140" rx="28" fill="#FFFFFF" stroke="#E4EAF7"/>
+  <circle cx="347" cy="330" r="38" fill="url(#accent)" fill-opacity=".18"/>
+  <path d="M314 330c0-18 15-33 33-33h0c18 0 33 15 33 33v10c0 18-15 33-33 33h0c-18 0-33-15-33-33v-10Z" stroke="url(#accent)" stroke-width="8"/>
+  <path d="M364 307v31" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M336 352h22" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+  <rect x="690" y="290" width="120" height="16" rx="8" fill="#D8E2F5"/>
+  <rect x="690" y="322" width="168" height="12" rx="6" fill="#E2E8F5"/>
+  <rect x="690" y="347" width="142" height="12" rx="6" fill="#E2E8F5"/>
+  <path d="M615 460h170c26 0 48 22 48 48v14c0 26-22 48-48 48H615c-26 0-48-22-48-48v-14c0-26 22-48 48-48Z" fill="#FFFFFF" stroke="#E4EAF7"/>
+  <path d="M652 505h94" stroke="url(#accent)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M758 505h22" stroke="#FF7A59" stroke-width="10" stroke-linecap="round"/>
+  <path d="M790 490l18 15-18 15" stroke="#FF7A59" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="860" cy="540" r="52" fill="#845DFF" fill-opacity=".14"/>
+  <circle cx="860" cy="540" r="20" fill="url(#accent)" fill-opacity=".3"/>
+</svg>

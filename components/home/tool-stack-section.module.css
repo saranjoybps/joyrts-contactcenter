@@ -1,0 +1,157 @@
+.shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.85);
+}
+
+.heading {
+  margin-top: 0.85rem;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.headingAccent {
+  background: linear-gradient(90deg, #5ef3ff 0%, #4b88ff 45%, #845dff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.description {
+  margin: 1rem auto 0;
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.1rem 0.95rem 1rem;
+  text-align: center;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(94, 243, 255, 0.22);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(94, 243, 255, 0.08), transparent 38%, rgba(132, 93, 255, 0.08));
+}
+
+.logoShell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: 0 auto;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 24px rgba(94, 243, 255, 0.08);
+}
+
+.logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.toolName {
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.toolRole {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: rgba(226, 232, 240, 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
