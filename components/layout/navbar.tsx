@@ -7,8 +7,6 @@ const navLinks = [
   { label: "ABOUT", href: "#about" },
   { label: "SERVICES", href: "#services" },
   { label: "WORKFLOW", href: "#workflow" },
-  { label: "FAQ", href: "#faq" },
-  { label: "CONTACT", href: "#contact" },
 ] as const;
 
 export default function Navbar() {
@@ -42,10 +40,19 @@ export default function Navbar() {
         <div className="pointer-events-auto flex items-center justify-between gap-4">
           <Link
             href="/"
-            className="text-[0.72rem] font-black tracking-[0.32em] text-slate-50 transition hover:text-cyan-200 sm:text-xs"
+            className="shrink-0 transition hover:opacity-90"
             onClick={() => setIsOpen(false)}
           >
-            JOYRTS
+            <span className="sr-only">JOYRTS</span>
+            <img
+              src="/logo.png"
+              alt="JOYRTS"
+              width={1145}
+              height={232}
+              loading="eager"
+              decoding="async"
+              className="block h-8 w-auto max-w-none sm:h-9"
+            />
           </Link>
           <button
             type="button"
@@ -76,6 +83,27 @@ export default function Navbar() {
               />
             </span>
           </button>
+
+          <nav
+            aria-label="Primary"
+            className="hidden flex-1 items-center justify-end gap-2 md:flex md:flex-wrap"
+          >
+            {navLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="rounded-full border border-white/8 bg-white/[0.04] px-3 py-2 text-[0.68rem] font-semibold tracking-[0.18em] text-slate-100/90 transition hover:border-cyan-300/30 hover:bg-cyan-300/10 hover:text-white lg:px-4 lg:py-3 lg:text-[0.72rem]"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_50%,#845dff_100%)] px-4 py-2 text-[0.68rem] font-bold tracking-[0.18em] text-slate-950 transition hover:brightness-110 lg:px-5 lg:py-3 lg:text-xs"
+            >
+              BOOK A DEMO
+            </a>
+          </nav>
         </div>
 
         <div
@@ -83,10 +111,10 @@ export default function Navbar() {
           className={`pointer-events-auto overflow-hidden transition-[max-height,opacity,margin-top] duration-300 ease-out md:mt-0 md:max-h-none md:overflow-visible md:opacity-100 ${
             isOpen ? "mt-4 max-h-[32rem] opacity-100" : "mt-0 max-h-0 opacity-0 md:max-h-none"
           }`}
-        >
+          >
           <nav
             aria-label="Primary"
-            className="flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:justify-end"
+            className="flex flex-col gap-2 md:hidden"
           >
             {navLinks.map((item) => (
               <a
@@ -101,7 +129,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="mt-1 inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_50%,#845dff_100%)] px-4 py-3 text-[0.72rem] font-bold tracking-[0.18em] text-slate-950 transition hover:brightness-110 md:mt-0 md:px-5 md:py-2 md:text-xs"
+              className="mt-1 inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_50%,#845dff_100%)] px-4 py-3 text-[0.72rem] font-bold tracking-[0.18em] text-slate-950 transition hover:brightness-110"
             >
               BOOK A DEMO
             </a>

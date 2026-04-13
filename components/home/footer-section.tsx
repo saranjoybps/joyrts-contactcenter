@@ -12,9 +12,15 @@ export default function FooterSection() {
       <div className="px-2 py-8 sm:px-4">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md">
-            <p className="text-lg font-semibold tracking-[0.25em] text-white">
-              JOYRTS
-            </p>
+            <img
+              src="/logo.png"
+              alt="JOYRTS"
+              width={1145}
+              height={232}
+              className="block h-8 w-auto max-w-none sm:h-9"
+              loading="eager"
+              decoding="async"
+            />
             <p className="mt-4 text-sm leading-7 text-slate-200/75">
               AI voice support for modern teams. We help calls start faster,
               route smarter, and hand off cleanly without losing context.

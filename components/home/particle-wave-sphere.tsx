@@ -121,9 +121,9 @@ function ParticleOrb() {
   const particleField = PARTICLE_FIELD;
   const isSmallScreen = size.width < 640;
   const isMediumScreen = size.width >= 640 && size.width < 1024;
-  const particleSize = isSmallScreen ? 0.102 : isMediumScreen ? 0.086 : 0.075;
-  const haloSize = isSmallScreen ? 0.19 : isMediumScreen ? 0.17 : 0.16;
-  const orbitScale = isSmallScreen ? 1.08 : isMediumScreen ? 1.12 : 1.16;
+  const particleSize = isSmallScreen ? 0.082 : isMediumScreen ? 0.086 : 0.075;
+  const haloSize = isSmallScreen ? 0.145 : isMediumScreen ? 0.17 : 0.16;
+  const orbitScale = isSmallScreen ? 0.94 : isMediumScreen ? 0.92 : 0.96;
   const geometry = useMemo(() => {
     const bufferGeometry = new THREE.BufferGeometry();
 
@@ -290,15 +290,15 @@ export default function ParticleWaveSphere() {
   const isSmallScreen = viewport.width > 0 && viewport.width < 640;
   const isMediumScreen = viewport.width >= 640 && viewport.width < 1024;
   const canvasHeightClass = isSmallScreen
-    ? "h-[28rem]"
+    ? "h-[34rem]"
     : isMediumScreen
       ? "h-[38rem]"
       : "h-[46rem]";
   const camera = isSmallScreen
-    ? { position: [0, 0, 20] as const, fov: 38, near: 0.1, far: 140 }
+    ? { position: [0, 0, 22.5] as const, fov: 34, zoom: 0.2, near: 0.1, far: 140 }
     : isMediumScreen
-      ? { position: [0, 0, 18.8] as const, fov: 34, near: 0.1, far: 140 }
-      : { position: [0, 0, 17.4] as const, fov: 31, near: 0.1, far: 140 };
+      ? { position: [0, 0, 22.8] as const, fov: 29, near: 0.1, far: 140 }
+      : { position: [0, 0, 21.6] as const, fov: 26, near: 0.1, far: 140 };
   const dpr: [number, number] = isSmallScreen
     ? [1, 1.5]
     : isMediumScreen
