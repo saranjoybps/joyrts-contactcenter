@@ -295,7 +295,7 @@ export default function ParticleWaveSphere() {
       ? "h-[38rem]"
       : "h-[46rem]";
   const camera = isSmallScreen
-    ? { position: [0, 0, 22.5] as const, fov: 34, zoom: 0.2, near: 0.1, far: 140 }
+    ? { position: [0, 0, 22.5] as const, fov: 34, zoom: 0.35, near: 0.1, far: 140 }
     : isMediumScreen
       ? { position: [0, 0, 22.8] as const, fov: 29, near: 0.1, far: 140 }
       : { position: [0, 0, 21.6] as const, fov: 26, near: 0.1, far: 140 };
