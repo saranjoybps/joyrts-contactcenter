@@ -56,6 +56,10 @@
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .mediaPanel {
+    display: none;
+  }
 }
 
 /* LEFT: Accordion */

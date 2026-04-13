@@ -78,6 +78,26 @@ function createParticleField(count: number) {
 const PARTICLE_COUNT = 5200;
 const PARTICLE_FIELD = createParticleField(PARTICLE_COUNT);
 
+function useSphereViewport() {
+  const [viewport, setViewport] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const update = () => {
+      setViewport({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    update();
+    window.addEventListener("resize", update);
+
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  return viewport;
+}
+
 function ParticleFallback() {
   return (
     <div className="flex min-h-[32rem] items-center justify-center rounded-[2rem] border border-white/10 bg-[#02040a] p-6">
@@ -96,9 +116,14 @@ function ParticleFallback() {
 }
 
 function ParticleOrb() {
-  const { gl } = useThree();
+  const { gl, size } = useThree();
   const groupRef = useRef<THREE.Group>(null);
   const particleField = PARTICLE_FIELD;
+  const isSmallScreen = size.width < 640;
+  const isMediumScreen = size.width >= 640 && size.width < 1024;
+  const particleSize = isSmallScreen ? 0.102 : isMediumScreen ? 0.086 : 0.075;
+  const haloSize = isSmallScreen ? 0.19 : isMediumScreen ? 0.17 : 0.16;
+  const orbitScale = isSmallScreen ? 1.08 : isMediumScreen ? 1.12 : 1.16;
   const geometry = useMemo(() => {
     const bufferGeometry = new THREE.BufferGeometry();
 
@@ -204,6 +229,7 @@ function ParticleOrb() {
     }
     positionAttribute.needsUpdate = true;
 
+    groupRef.current.scale.setScalar(orbitScale);
     groupRef.current.rotation.x =
       Math.sin(elapsed * 0.35) * 0.06 - pointerCurrentRef.current.y * 0.1;
     groupRef.current.rotation.y =
@@ -218,7 +244,7 @@ function ParticleOrb() {
         <pointsMaterial
           map={particleTexture ?? undefined}
           color="#ffffff"
-          size={0.06}
+          size={particleSize}
           sizeAttenuation
           transparent
           opacity={0.92}
@@ -232,7 +258,7 @@ function ParticleOrb() {
         <pointsMaterial
           map={particleTexture ?? undefined}
           color="#ffffff"
-          size={0.13}
+          size={haloSize}
           sizeAttenuation
           transparent
           opacity={0.12}
@@ -260,6 +286,20 @@ function Scene() {
 
 export default function ParticleWaveSphere() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const viewport = useSphereViewport();
+  const isSmallScreen = viewport.width > 0 && viewport.width < 640;
+  const isMediumScreen = viewport.width >= 640 && viewport.width < 1024;
+  const canvasHeightClass = isSmallScreen
+    ? "h-[28rem]"
+    : isMediumScreen
+      ? "h-[38rem]"
+      : "h-[46rem]";
+  const camera = isSmallScreen
+    ? { position: [0, 0, 20] as const, fov: 38, near: 0.1, far: 140 }
+    : isMediumScreen
+      ? { position: [0, 0, 18.8] as const, fov: 34, near: 0.1, far: 140 }
+      : { position: [0, 0, 17.4] as const, fov: 31, near: 0.1, far: 140 };
+  const dpr = isSmallScreen ? [1, 1.5] as const : isMediumScreen ? [1, 1.75] as const : [1, 1.9] as const;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -278,18 +318,18 @@ export default function ParticleWaveSphere() {
   return (
     <div className="relative overflow-hidden rounded-[2rem]">
       <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-center">
-        <p className="max-w-[14ch] bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_42%,#845dff_74%,#ff4fd1_100%)] bg-clip-text text-[clamp(3.8rem,8.6vw,7.2rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-transparent drop-shadow-[0_10px_28px_rgba(0,0,0,0.7)] [text-shadow:0_0_22px_rgba(94,243,255,0.12)]">
+        <p className="max-w-[12ch] bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_42%,#845dff_74%,#ff4fd1_100%)] bg-clip-text text-[clamp(2.55rem,10.2vw,7.2rem)] font-semibold leading-[0.9] tracking-[-0.06em] text-transparent drop-shadow-[0_10px_28px_rgba(0,0,0,0.7)] [text-shadow:0_0_22px_rgba(94,243,255,0.12)] sm:max-w-[13ch] sm:text-[clamp(3.2rem,8vw,7.2rem)] lg:max-w-[14ch] lg:text-[clamp(3.8rem,8.6vw,7.2rem)]">
           Unlock a world of
           <br />
           voice with AI
         </p>
       </div>
-      <div className="relative h-[34rem] sm:h-[40rem]">
+      <div className={`relative ${canvasHeightClass}`}>
         <Canvas
           className="block h-full w-full"
           style={{ touchAction: "none" }}
-          camera={{ position: [0, 0, 19.8], fov: 34, near: 0.1, far: 140 }}
-          dpr={[1, 1.75]}
+          camera={camera}
+          dpr={dpr}
           gl={{ antialias: true, alpha: true }}
         >
           <Scene />

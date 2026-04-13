@@ -5,64 +5,64 @@ import styles from "./customer-support-section.module.css";
 
 const supportPoints = [
   {
-    title: "Fastest across geographies",
+    title: "24/7 live coverage",
     description:
-      "Greets every caller instantly with a consistent, on-brand voice — no hold music, no delays, regardless of call volume or time zone.",
-    cta: "See live demo",
-    panelTitle: "Instant answer",
-    panelSub: "Response speed by region",
+      "Answers every call around the clock with a consistent, on-brand voice so customers never hit voicemail or long hold times.",
+    cta: "See live coverage",
+    panelTitle: "Always on",
+    panelSub: "Coverage across every hour",
     vis: [
-      { label: "North America", val: "< 200ms", pct: 92 },
-      { label: "Europe", val: "< 240ms", pct: 86 },
-      { label: "Asia Pacific", val: "< 280ms", pct: 78 },
+      { label: "After-hours calls", val: "Handled automatically", pct: 98 },
+      { label: "Weekend volume", val: "No coverage gaps", pct: 96 },
+      { label: "Holiday spikes", val: "Routed instantly", pct: 94 },
     ],
-    metrics: [{ n: "99.9%", l: "Uptime" }, { n: "< 1s", l: "First response" }],
-    tags: ["Voice AI", "Auto-greet", "24/7"],
+    metrics: [{ n: "24/7", l: "Coverage" }, { n: "< 1s", l: "Pick-up time" }],
+    tags: ["Voice AI", "Overflow support", "Always on"],
   },
   {
-    title: "Best-in-class fluency across languages",
+    title: "Automated call handling",
     description:
-      "Understands caller intent and routes each request to the right team — billing, tech support, sales — faster than any manual triage workflow.",
-    cta: "View routing logic",
+      "Captures intent, qualifies the request, and routes each call to the right team without manual triage slowing things down.",
+    cta: "View call automation",
     panelTitle: "Smart routing",
-    panelSub: "Routing accuracy by category",
+    panelSub: "Call automation in action",
     vis: [
-      { label: "Billing queries", val: "97% accurate", pct: 97 },
-      { label: "Tech support", val: "94% accurate", pct: 94 },
-      { label: "Sales handoff", val: "91% accurate", pct: 91 },
+      { label: "Call intent captured", val: "97% accurate", pct: 97 },
+      { label: "Correct team routing", val: "94% accurate", pct: 94 },
+      { label: "Manual transfers", val: "Reduced", pct: 88 },
     ],
     metrics: [{ n: "3x", l: "Faster routing" }, { n: "97%", l: "Accuracy" }],
-    tags: ["NLP", "Intent detection", "Auto-route"],
+    tags: ["Intent detection", "Auto-route", "No hold queues"],
   },
   {
-    title: "Expressive and accurate voices",
+    title: "AI workflow automation",
     description:
-      "Passes the full conversation context — caller name, issue, history — cleanly when a human agent joins, so nothing has to be repeated.",
-    cta: "See handoff flow",
-    panelTitle: "Clean handoff",
-    panelSub: "Context transfer completeness",
+      "Automates repetitive workflows like ticket creation, follow-up messages, and CRM updates so the team can move faster.",
+    cta: "See workflow automation",
+    panelTitle: "Workflow engine",
+    panelSub: "Automated tasks completed",
     vis: [
-      { label: "Caller context", val: "100% passed", pct: 100 },
-      { label: "Issue history", val: "98% passed", pct: 98 },
-      { label: "Prior resolutions", val: "95% passed", pct: 95 },
+      { label: "Tickets created", val: "Automatically", pct: 100 },
+      { label: "Follow-ups sent", val: "Instantly", pct: 98 },
+      { label: "CRM updated", val: "In real time", pct: 95 },
     ],
-    metrics: [{ n: "0", l: "Repeat questions" }, { n: "100%", l: "Context passed" }],
-    tags: ["Live transfer", "Context sync", "CRM-ready"],
+    metrics: [{ n: "0", l: "Manual steps" }, { n: "100%", l: "Workflow sync" }],
+    tags: ["CRM-ready", "Auto-ticketing", "Follow-up automation"],
   },
   {
-    title: "Most cost-efficient at 1 cent per minute",
+    title: "Lower support costs",
     description:
-      "Ends every call with a clear next step — confirmation email, ticket number, callback time — so customers always know what happens next.",
+      "Cuts repetitive work and reduces call handling time, helping your team serve more customers without adding overhead.",
     cta: "Calculate savings",
-    panelTitle: "Clear follow-up",
-    panelSub: "Post-call action completion",
+    panelTitle: "Savings dashboard",
+    panelSub: "Cost efficiency by workflow",
     vis: [
-      { label: "Confirmation sent", val: "100% of calls", pct: 100 },
-      { label: "Ticket created", val: "98% of calls", pct: 98 },
-      { label: "Callback scheduled", val: "89% of calls", pct: 89 },
+      { label: "Handle time", val: "Reduced", pct: 91 },
+      { label: "Support load", val: "Automated", pct: 89 },
+      { label: "Operational cost", val: "Lowered", pct: 93 },
     ],
-    metrics: [{ n: "1¢", l: "Per minute" }, { n: "50%", l: "Cost saving" }],
-    tags: ["Auto-summary", "Email follow-up", "Ticketing"],
+    metrics: [{ n: "24/7", l: "Coverage" }, { n: "50%", l: "Cost saving" }],
+    tags: ["Cost control", "Auto-summary", "Process automation"],
   },
 ] as const;
 
@@ -99,12 +99,15 @@ export default function CustomerSupportSection() {
       <div className={styles.frame}>
         <div className={styles.stickyShell}>
           <div className={styles.header}>
-            <p className={styles.eyebrow}>Customer support</p>
+            <p className={styles.eyebrow}>24/7 contact center support</p>
             <h2 className={styles.heading}>
-              <span className={styles.headingAccent}>Fast</span> customer
-              support built for <span className={styles.headingAccent}>JOYRTS</span>.
+              We deliver <span className={styles.headingAccent}>24/7 support</span> and
+              automate calls with <span className={styles.headingAccent}>AI workflows</span>.
             </h2>
-            <p className={styles.subtext}>Four steps that turn every call into a resolved ticket.</p>
+            <p className={styles.subtext}>
+              We answer calls around the clock, route every request intelligently, and automate repetitive
+              workflows so your team can focus on the work that matters most.
+            </p>
           </div>
           <div className={styles.grid}>
             <div className={styles.accordion}>

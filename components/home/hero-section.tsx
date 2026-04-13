@@ -24,7 +24,7 @@ export default function HeroSection() {
 
           <div className="w-full px-4 pb-0 pt-0 text-center sm:px-6 lg:px-8">
             <p
-              className={`${anton.className} mx-auto inline-block whitespace-nowrap text-center text-[clamp(2.1rem,7vw,7.5rem)] leading-none tracking-[-0.045em] bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_45%,#845dff_100%)] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] drop-shadow-[0_12px_28px_rgba(0,0,0,0.4)]`}
+              className={`${anton.className} mx-auto inline-block max-w-[12ch] whitespace-normal text-center text-[clamp(3.25rem,11.5vw,7.5rem)] leading-[0.9] tracking-[-0.045em] bg-[linear-gradient(90deg,#5ef3ff_0%,#4b88ff_45%,#845dff_100%)] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] drop-shadow-[0_12px_28px_rgba(0,0,0,0.4)] sm:max-w-none sm:whitespace-nowrap sm:text-[clamp(2.7rem,7vw,7.5rem)] lg:text-[clamp(3.4rem,7vw,7.5rem)]`}
             >
               Speak louder, serve smarter
             </p>

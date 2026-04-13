@@ -24,6 +24,8 @@ const tools = [
   },
 ] as const;
 
+const marqueeTools = [...tools, ...tools] as const;
+
 export default function ToolStackSection() {
   return (
     <div className={styles.shell}>
@@ -39,23 +41,29 @@ export default function ToolStackSection() {
         </p>
       </div>
 
-      <div className={styles.grid}>
-        {tools.map((tool) => (
-          <article key={tool.name} className={styles.card}>
-            <div className={styles.logoShell}>
-              <Image
-                src={tool.logo}
-                alt={`${tool.name} logo`}
-                className={styles.logo}
-                fill
-                sizes="104px"
-                unoptimized
-              />
-            </div>
-            <div className={styles.toolName}>{tool.name}</div>
-            <div className={styles.toolRole}>{tool.role}</div>
-          </article>
-        ))}
+      <div className={styles.marqueeViewport}>
+        <div className={styles.marqueeTrack}>
+          {marqueeTools.map((tool, index) => (
+            <article
+              key={`${tool.name}-${index}`}
+              className={styles.card}
+              aria-hidden={index >= tools.length}
+            >
+              <div className={styles.logoShell}>
+                <Image
+                  src={tool.logo}
+                  alt={`${tool.name} logo`}
+                  className={styles.logo}
+                  fill
+                  sizes="104px"
+                  unoptimized
+                />
+              </div>
+              <div className={styles.toolName}>{tool.name}</div>
+              <div className={styles.toolRole}>{tool.role}</div>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   );

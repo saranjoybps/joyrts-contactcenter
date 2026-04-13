@@ -14,66 +14,43 @@ export default function Home() {
       <section className="mx-auto w-full max-w-5xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur sm:p-8">
           <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-cyan-200">
-            Scroll test content
+            24/7 support flow
           </p>
           <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
-            Keep scrolling to watch the 3D model react
+            Keep scrolling to see how our support system stays active
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-200/80 sm:text-base">
-            This extra section exists so the page has real vertical overflow for
-            testing the scroll-linked rotation. As you move down the page, the
-            model should speed up in the scroll direction and ease back to a
-            stop when you pause.
+            This section creates the vertical space needed to showcase the
+            experience while reinforcing the message: we provide 24/7 contact
+            center coverage, automate calls, and build AI workflows that keep
+            support moving without delays.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
-              <p className="text-sm font-semibold text-white">Scroll down</p>
+              <p className="text-sm font-semibold text-white">Always available</p>
               <p className="mt-2 text-sm leading-6 text-slate-300/80">
-                The model should rotate with the direction and speed of your
-                scroll.
+                Around-the-clock coverage for every caller, even after hours,
+                on weekends, and during spikes.
               </p>
             </div>
             <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
-              <p className="text-sm font-semibold text-white">Pause</p>
+              <p className="text-sm font-semibold text-white">Call automation</p>
               <p className="mt-2 text-sm leading-6 text-slate-300/80">
-                When scrolling stops, the motion should ease out naturally.
+                We capture intent, route calls, and trigger the next step
+                without forcing customers to repeat themselves.
               </p>
             </div>
             <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
-              <p className="text-sm font-semibold text-white">Scroll up</p>
+              <p className="text-sm font-semibold text-white">AI workflows</p>
               <p className="mt-2 text-sm leading-6 text-slate-300/80">
-                The direction should reverse without snapping.
+                Tickets, follow-ups, CRM updates, and handoffs are automated so
+                your team can focus on higher-value work.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="mx-auto w-full max-w-5xl px-4 pb-32 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(34,211,238,0.12),rgba(15,23,42,0.5))] p-6">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-cyan-100">
-              Interaction notes
-            </p>
-            <p className="mt-3 text-sm leading-6 text-slate-200/80">
-              This is a simple test harness for the scroll behavior, so we can
-              tune sensitivity and easing before wiring it into the real page
-              sections.
-            </p>
-          </div>
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(124,58,237,0.12),rgba(15,23,42,0.5))] p-6">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-violet-100">
-              Extra spacing
-            </p>
-            <p className="mt-3 text-sm leading-6 text-slate-200/80">
-              The extra height below gives the browser enough room to scroll,
-              even if the viewport is tall.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
         <ParticleWaveSphere />
       </section>
